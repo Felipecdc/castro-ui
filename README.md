@@ -6,13 +6,13 @@
 
 Configurar arquivo de estilos geral para o Tailwind CSS:
 
-```bash
+```css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 ```
 
-## Instalacao
+## Instalação
 
 ```bash
 npm install castro-ui
@@ -39,7 +39,7 @@ Importe o componente da biblioteca:
 
 ```jsx
 import { FaBars, FaImage, FaLink, FaHome } from "react-icons/fa";
-import { ActionButton } from "./castro-ui/action-button";
+import { ActionButton } from "./castro-ui";
 ```
 
 ### Configure o Código para Renderização
@@ -85,7 +85,7 @@ Importe o componente da biblioteca:
 
 ```jsx
 import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
-import { Carousel } from "./castro-ui/carousel";
+import { Carousel } from "./castro-ui";
 ```
 
 ```jsx
@@ -130,7 +130,7 @@ Importe o componente da biblioteca:
 
 ```jsx
 import { PiCopy, PiSpinner } from "react-icons/pi";
-import { CodeBlock } from "./castro-ui/code";
+import { CodeBlock } from "./castro-ui";
 ```
 
 ```jsx
@@ -159,6 +159,96 @@ return (
   <>
     <div className="flex items-center justify-center w-full h-screen">
       <CodeBlock code={code} maxHeight="300" maxWidth="380" />
+    </div>
+  </>
+);
+```
+
+</details>
+
+### `CustomAlert`
+
+<details>
+  <summary>Ver código</summary>
+
+# Importação
+
+Importe o componente da biblioteca no arquivo principal:
+
+```jsx
+import { CustomAlert } from "./castro-ui";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <App />
+    <CustomAlert />
+  </React.StrictMode>
+);
+```
+
+## Configuração para Mostrar o Alerta
+
+Configure a ação para mostrar o alerta em determinadas ocasiões:
+
+```jsx
+import { showCustomAlert } from "./castro-ui";
+```
+
+```jsx
+const handleAlert = () => {
+  showCustomAlert({
+    title: "Title",
+    message: "Text message",
+    textClose: "Close",
+  });
+};
+
+return (
+  <>
+    <div className="flex items-center justify-center w-full h-screen">
+      <button onClick={handleAlert}>Show Alert</button>
+    </div>
+  </>
+);
+```
+
+</details>
+
+### `CustomPagination`
+
+<details>
+  <summary>Ver código</summary>
+
+# Importação
+
+Importe o componente da biblioteca:
+
+```jsx
+import { CustomPagination } from "./castro-ui";
+```
+
+## Configuração do Componente
+
+```jsx
+
+const [currentItems, setCurrentItems] = useState<any[]>([]);
+const items = ["item 1", "item 2", ...];
+const itemsPerPage = 10;
+
+const handlePageChange = (page: number) => {
+const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    setCurrentItems(items.slice(startIndex, endIndex));
+};
+
+return (
+  <>
+    <div className="flex items-center justify-center w-full h-screen">
+      <CustomPagination
+        items={items}
+        itemsPerPage={itemsPerPage}
+        onPageChange={handlePageChange}
+      />
     </div>
   </>
 );
