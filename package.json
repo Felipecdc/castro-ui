@@ -15,6 +15,10 @@
   ],
   "author": "Felipe Castro <felipecdc09@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Felipecdc/castro-ui"
+  },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
