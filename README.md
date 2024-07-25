@@ -255,3 +255,148 @@ return (
 ```
 
 </details>
+
+### `Form`
+
+<details>
+  <summary>Ver código</summary>
+
+# Importação
+
+Importe o componente da biblioteca no arquivo principal:
+
+```jsx
+import { Form } from "./castro-ui";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <App />
+    <Form />
+  </React.StrictMode>
+);
+```
+
+## Configuração para Mostrar o Formulario
+
+Configure a ação para mostrar o formulario em determinadas ocasiões:
+
+```jsx
+import { showCustomForm } from "./castro-ui";
+```
+
+```jsx
+const handleForm = () => {
+  showCustomForm({
+    title: "Create Project",
+    message: "Deploy your project",
+    labelOne: "Name",
+    placeholder: "Enter your name",
+    labelTwo: "Category",
+    options: ["Auditor", "Programador", "Diretor"],
+    textCancel: "Cancel",
+    textDeploy: "Deploy",
+    onDeploy: handleDeploy,
+  });
+};
+
+return (
+  <>
+    <div className="flex items-center justify-center w-full h-screen">
+      <button onClick={handleForm}>Show Form</button>
+    </div>
+  </>
+);
+```
+
+</details>
+
+### `PinField`
+
+<details>
+  <summary>Ver código</summary>
+
+# Importação
+
+Importe o componente da biblioteca:
+
+```jsx
+import { PinField } from "./castro-ui";
+```
+
+```jsx
+return (
+  <>
+    <div className="flex items-center justify-center w-full h-screen">
+      <PinField
+        length={5}
+        onChange={(pin) => {
+          alert(pin);
+        }}
+      />
+    </div>
+  </>
+);
+```
+
+</details>
+
+### `Search`
+
+<details>
+  <summary>Ver código</summary>
+
+# Importação
+
+Importe o componente da biblioteca:
+
+```jsx
+import { Search } from "./castro-ui";
+```
+
+```jsx
+return (
+  <>
+    <div className="flex items-center justify-center w-full h-screen">
+      <Search
+        onClick={() => alert("Hello World")}
+        placeholder="Your placeholder"
+      />
+    </div>
+  </>
+);
+```
+
+</details>
+
+### `Sidebar`
+
+<details>
+  <summary>Ver código</summary>
+
+# Importação
+
+Importe o componente da biblioteca:
+
+```jsx
+import { Sidebar, SideAction, SideContent, SideTitle } from "./castro-ui";
+```
+
+```jsx
+return (
+  <>
+    <div className="flex items-center justify-center w-full h-screen">
+      <Sidebar>
+        <SideAction>
+          <button>Open</button>
+        </SideAction>
+        <SideContent className="p-4">
+          <SideTitle>Title of sidebar</SideTitle>
+          <span>Content of sidebar</span>
+        </SideContent>
+      </Sidebar>
+    </div>
+  </>
+);
+```
+
+</details>
