@@ -299,6 +299,10 @@ const handleForm = () => {
   });
 };
 
+const handleDeploy = (name: string, option: string) => {
+  alert(`Name: ${name}, Category: ${option}`);
+};
+
 return (
   <>
     <div className="flex items-center justify-center w-full h-screen">
