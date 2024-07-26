@@ -43,8 +43,8 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, maxHeight, maxWidth }) => {
       style={{
         maxHeight: maxHeight ? `${maxHeight}px` : "auto",
         minHeight: "70px",
+        height: "auto",
         width: maxWidth ? `${maxWidth}px` : "100%",
-        height: "100%",
       }}
     >
       <div className="w-full bg-[#414141] rounded-t-md text-white text-sm p-2 flex items-center justify-end">
