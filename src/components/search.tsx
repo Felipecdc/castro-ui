@@ -1,4 +1,3 @@
-import "../index.css";
 import React, { ChangeEvent, MouseEvent } from "react";
 import { FaSearch } from "react-icons/fa";
 
