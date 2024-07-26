@@ -1,6 +1,6 @@
 {
   "name": "castro-ui",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A collection of reusable React components with Tailwind CSS and TypeScript.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
