@@ -1,2 +1,6 @@
-node_modules
-dist
+# Ignore .env file
+.env
+
+# Ignore local configuration files
+node_modules/
+.npmignore
